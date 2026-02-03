@@ -6,7 +6,7 @@
 - [x] 2. Create .env file with Discord bot token and application ID
 - [x] 3. Create .env.example template file for environment variables
 - [x] 4. Set up basic Discord client in index.ts with login and ready event
-- [ ] 5. Create /commands directory structure
+- [x] 5. Create /commands directory structure
 - [ ] 6. Implement /new-tech slash command definition with title (required) and description (optional) parameters
 - [ ] 7. Create command registration script to register /new-tech command with Discord API
 - [ ] 8. Implement interaction handler for slash commands in index.ts
