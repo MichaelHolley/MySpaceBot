@@ -3,7 +3,7 @@
 ## /new-tech Command Implementation
 
 - [x] 1. Install discord.js dependency
-- [ ] 2. Create .env file with Discord bot token and application ID
+- [x] 2. Create .env file with Discord bot token and application ID
 - [ ] 3. Create .env.example template file for environment variables
 - [ ] 4. Set up basic Discord client in index.ts with login and ready event
 - [ ] 5. Create /commands directory structure
