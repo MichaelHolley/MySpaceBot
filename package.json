@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "bun run index.ts",
+    "deploy": "bun run deploy-commands.ts",
     "dev": "bun run --watch index.ts",
     "test": "bun test",
     "lint": "bunx tsc --noEmit"
