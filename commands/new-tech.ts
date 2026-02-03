@@ -13,6 +13,16 @@ export const data = new SlashCommandBuilder()
 			.setRequired(false));
 
 export async function execute(interaction: ChatInputCommandInteraction) {
-	// Logic to be implemented in Task 9
-	await interaction.reply({ content: 'Command received! Processing logic will be added soon.', ephemeral: true });
+	const title = interaction.options.getString('title', true);
+	const description = interaction.options.getString('description') ?? 'No description provided.';
+
+	console.log(`New tech submission:
+Title: ${title}
+Description: ${description}
+Submitted by: ${interaction.user.tag} (${interaction.user.id})`);
+
+	await interaction.reply({
+		content: `✅ **Technology Submission Received!**\n\n**Title:** ${title}\n**Description:** ${description}\n\nThank you for your submission!`,
+		ephemeral: true
+	});
 }

@@ -10,7 +10,7 @@
 - [x] 6. Implement /new-tech slash command definition with title (required) and description (optional) parameters
 - [x] 7. Create command registration script to register /new-tech command with Discord API
 - [x] 8. Implement interaction handler for slash commands in index.ts
-- [ ] 9. Add logic to handle /new-tech command: log to console and send confirmation message to user
+- [x] 9. Add logic to handle /new-tech command: log to console and send confirmation message to user
 - [ ] 10. Add DM-only restriction check (reject if command used in server channels)
 - [ ] 11. Add error handling for command interactions
 - [ ] 12. Test bot with /new-tech command in Discord DMs
