@@ -13,4 +13,4 @@
 - [x] 9. Add logic to handle /new-tech command: log to console and send confirmation message to user
 - [x] 10. Add DM-only restriction check (reject if command used in server channels)
 - [x] 11. Add error handling for command interactions
-- [ ] 12. Test bot with /new-tech command in Discord DMs
+- [x] 12. Test bot with /new-tech command in Discord DMs
