@@ -13,6 +13,14 @@ export const data = new SlashCommandBuilder()
 			.setRequired(false));
 
 export async function execute(interaction: ChatInputCommandInteraction) {
+	if (interaction.guildId) {
+		await interaction.reply({
+			content: '❌ This command can only be used in Direct Messages (DMs).',
+			ephemeral: true
+		});
+		return;
+	}
+
 	const title = interaction.options.getString('title', true);
 	const description = interaction.options.getString('description') ?? 'No description provided.';
 
