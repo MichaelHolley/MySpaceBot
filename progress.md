@@ -4,7 +4,7 @@
 
 - [x] 1. Install discord.js dependency
 - [x] 2. Create .env file with Discord bot token and application ID
-- [ ] 3. Create .env.example template file for environment variables
+- [x] 3. Create .env.example template file for environment variables
 - [ ] 4. Set up basic Discord client in index.ts with login and ready event
 - [ ] 5. Create /commands directory structure
 - [ ] 6. Implement /new-tech slash command definition with title (required) and description (optional) parameters
