@@ -4,8 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run index.ts",
-    "deploy": "bun run deploy-commands.ts",
+    "start": "bun run --watch index.ts",
+    "reg:commands": "bun run register-commands.ts",
     "dev": "bun run --watch index.ts",
     "test": "bun test",
     "lint": "bunx tsc --noEmit"
