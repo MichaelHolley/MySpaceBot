@@ -6,10 +6,7 @@ export const data = new SlashCommandBuilder()
   .setName("new-tech")
   .setDescription("Submit a new technology for review")
   .addStringOption((option) =>
-    option
-      .setName("title")
-      .setDescription("The name/title of the technology")
-      .setRequired(true),
+    option.setName("title").setDescription("The name/title of the technology").setRequired(true),
   )
   .addStringOption((option) =>
     option
@@ -27,10 +24,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
     return;
   }
 
-  if (
-    interaction.user.bot ||
-    WHITELISTED_USER_IDS.indexOf(interaction.user.id) === -1
-  ) {
+  if (interaction.user.bot || WHITELISTED_USER_IDS.indexOf(interaction.user.id) === -1) {
     await interaction.reply({
       content: "❌ You are not authorized to use this command.",
       ephemeral: true,
@@ -39,8 +33,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
   }
 
   const title = interaction.options.getString("title", true);
-  const description =
-    interaction.options.getString("description") ?? "No description provided.";
+  const description = interaction.options.getString("description") ?? "No description provided.";
 
   console.log(
     `New tech submission:\nTitle: ${title}\nDescription: ${description}\nSubmitted by: ${interaction.user.tag} (${interaction.user.id})`,

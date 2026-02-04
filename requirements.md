@@ -20,17 +20,20 @@
 ### Requirements Summary
 
 **Command:** `/new-tech`
+
 - **Parameters:**
   - `title` (required) - The name/title of the technology
   - `description` (optional) - Additional details about the technology
 
 **Behavior:**
+
 - Bot only responds in private messages (DMs)
 - Logs submission details to console
 - Sends formatted confirmation message back to user with entered tech details
 - Rejects usage outside of DMs with helpful message
 
 **Technology Stack:**
+
 - Runtime: Bun
 - Library: discord.js
 - Language: TypeScript

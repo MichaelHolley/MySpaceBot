@@ -37,11 +37,13 @@ describe("new-tech command", () => {
     await execute(interaction);
 
     expect(consoleSpy).toHaveBeenCalled();
-    expect(interaction.reply).toHaveBeenCalledWith(expect.objectContaining({
-      content: expect.stringContaining("✅ **Technology Submission Received!**"),
-      ephemeral: true,
-    }));
-    
+    expect(interaction.reply).toHaveBeenCalledWith(
+      expect.objectContaining({
+        content: expect.stringContaining("✅ **Technology Submission Received!**"),
+        ephemeral: true,
+      }),
+    );
+
     consoleSpy.mockRestore();
   });
 });
