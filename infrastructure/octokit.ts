@@ -21,5 +21,12 @@ export async function createTechIssue(
     labels: ["tech"],
   });
 
+  await octokit.rest.projects.addItemForUser({
+    username: "michaelholley",
+    project_number: 6,
+    type: "Issue",
+    id: response.data.id,
+  });
+
   return { url: response.data.html_url, id: response.data.number };
 }
