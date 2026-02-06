@@ -9,15 +9,11 @@ if (!token) {
 }
 
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.DirectMessages],
+  intents: [GatewayIntentBits.DirectMessages],
 });
 
 client.once(Events.ClientReady, async (client) => {
   console.log(`Ready! Logged in as ${client.user.tag}`);
-});
-
-client.on(Events.MessageCreate, (message) => {
-  console.log(`Message received: ${message.content}`);
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
