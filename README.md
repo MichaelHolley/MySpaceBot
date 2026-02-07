@@ -5,12 +5,14 @@ A Discord bot designed to streamline GitHub backlog management. It allows you to
 ## Setup
 
 1. **Install dependencies:**
+
    ```bash
    bun install
    ```
 
 2. **Configure environment:**
    Create a `.env` file with the following:
+
    ```env
    DISCORD_TOKEN=your_discord_bot_token
    APPLICATION_ID=your_discord_application_id
@@ -18,9 +20,16 @@ A Discord bot designed to streamline GitHub backlog management. It allows you to
    USER_ID=your_discord_user_id
    ```
 
-3. **Run the bot:**
+3. **Register commands:**
+
    ```bash
-   bun run index.ts
+   bun reg:commands
+   ```
+
+4. **Run the bot:**
+
+   ```bash
+   bun dev
    ```
 
 ## Usage
