@@ -1,9 +1,25 @@
-import { ChatInputCommandInteraction } from "discord.js";
+import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
 import { createTechIssue } from "../infrastructure/octokit";
 
-export async function execute(interaction: ChatInputCommandInteraction) {
-  const WHITELISTED_USER_IDS = process.env.USER_ID ? [process.env.USER_ID] : [];
+const WHITELISTED_USER_IDS = process.env.USER_ID ? [process.env.USER_ID] : [];
 
+export const data = new SlashCommandBuilder()
+  .setName("new-tech")
+  .setDescription("Submit a new technology for review")
+  .addStringOption((option) =>
+    option
+      .setName("title")
+      .setDescription("The name/title of the technology")
+      .setRequired(true),
+  )
+  .addStringOption((option) =>
+    option
+      .setName("description")
+      .setDescription("Additional details about the technology")
+      .setRequired(false),
+  );
+
+export async function execute(interaction: ChatInputCommandInteraction) {
   if (interaction.guildId) {
     await interaction.reply({
       content: "❌ This command can only be used in Direct Messages (DMs).",
