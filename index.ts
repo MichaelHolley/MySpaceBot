@@ -1,8 +1,9 @@
 import { Client, Events, GatewayIntentBits, MessageFlags } from "discord.js";
 import * as newTechCommand from "./commands/new-tech";
 import { registerCommands } from "./commands/register-commands";
+import { getDiscordToken } from "./util/get-discord-token";
 
-const token = process.env.DISCORD_TOKEN;
+const token = getDiscordToken();
 
 if (!token) {
   console.error("DISCORD_TOKEN is not defined in the environment variables.");
