@@ -4,8 +4,6 @@
   "type": "module",
   "module": "index.ts",
   "scripts": {
-    "start": "bun run --watch index.ts",
-    "reg:commands": "bun run register-commands.ts",
     "dev": "bun run --watch index.ts",
     "test": "bun test",
     "lint": "oxlint",
