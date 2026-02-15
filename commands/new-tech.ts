@@ -1,4 +1,8 @@
-import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import {
+  ChatInputCommandInteraction,
+  MessageFlags,
+  SlashCommandBuilder,
+} from "discord.js";
 import { createTechIssue } from "../infrastructure/octokit";
 
 const WHITELISTED_USER_IDS = process.env.USER_ID ? [process.env.USER_ID] : [];
@@ -23,7 +27,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
   if (interaction.guildId) {
     await interaction.reply({
       content: "❌ This command can only be used in Direct Messages (DMs).",
-      ephemeral: true,
+      flags: MessageFlags.Ephemeral,
     });
     return;
   }
@@ -34,7 +38,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
   ) {
     await interaction.reply({
       content: "❌ You are not authorized to use this command.",
-      ephemeral: true,
+      flags: MessageFlags.Ephemeral,
     });
     return;
   }
