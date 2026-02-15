@@ -40,3 +40,11 @@ A Discord bot designed to streamline GitHub backlog management. It allows you to
 <img width="818" height="97" alt="image" src="https://github.com/user-attachments/assets/122332b6-e4ba-4fe4-ae43-18820d41759a" />
 
 <img width="399" height="133" alt="image" src="https://github.com/user-attachments/assets/110b7624-f0ce-4f34-bbde-38c96e71a119" />
+
+## Docker Build
+
+Built a new production `:latest` image via:
+
+```sh
+docker build --platform linux/amd64 -t mpholley/myspacebot:latest .
+```
