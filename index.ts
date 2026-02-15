@@ -1,5 +1,6 @@
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import * as newTechCommand from "./commands/new-tech";
+import { registerCommands } from "./commands/register-commands";
 
 const token = process.env.DISCORD_TOKEN;
 
@@ -7,6 +8,8 @@ if (!token) {
   console.error("DISCORD_TOKEN is not defined in the environment variables.");
   process.exit(1);
 }
+
+await registerCommands();
 
 const client = new Client({
   intents: [GatewayIntentBits.DirectMessages],
