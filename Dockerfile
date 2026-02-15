@@ -15,5 +15,4 @@ FROM oven/bun:1-slim
 WORKDIR /app
 COPY --from=build /app/dist/bot.js ./bot.js
 
-
 CMD ["bun", "bot.js"]
