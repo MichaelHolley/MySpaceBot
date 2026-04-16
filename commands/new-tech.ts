@@ -46,7 +46,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
     );
 
     await interaction.editReply({
-      content: `✅ **Tech Submission Received!**\n\n[View on GitHub](${url})`,
+      content: `✅ **Tech Submission Received!**\n**${title}**\n\n[View on GitHub](${url})`,
     });
   } catch (error) {
     console.error("Error creating GitHub issue:", error);
