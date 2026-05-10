@@ -1,5 +1,6 @@
 import { REST, Routes } from "discord.js";
 import { data as newTechCommand } from "./new-tech";
+import { data as newProjectCommand } from "./new-project";
 import { getDiscordToken } from "../util/get-discord-token";
 import { getApplicationId } from "../util/get-application-id";
 
@@ -12,7 +13,7 @@ export async function registerCommands() {
     process.exit(1);
   }
 
-  const commands = [newTechCommand.toJSON()];
+  const commands = [newTechCommand.toJSON(), newProjectCommand.toJSON()];
   const rest = new REST().setToken(token);
 
   try {

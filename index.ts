@@ -1,5 +1,6 @@
 import { Client, Events, GatewayIntentBits, MessageFlags } from "discord.js";
 import * as newTechCommand from "./commands/new-tech";
+import * as newProjectCommand from "./commands/new-project";
 import { registerCommands } from "./commands/register-commands";
 import { getDiscordToken } from "./util/get-discord-token";
 
@@ -23,9 +24,15 @@ client.once(Events.ClientReady, async (client) => {
 client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
-  if (interaction.commandName === "new-tech") {
+  const commands: Record<string, { execute: typeof newTechCommand.execute }> = {
+    "new-tech": newTechCommand,
+    "new-project": newProjectCommand,
+  };
+
+  const command = commands[interaction.commandName];
+  if (command) {
     try {
-      await newTechCommand.execute(interaction);
+      await command.execute(interaction);
     } catch (error) {
       console.error(`Error executing ${interaction.commandName}:`, error);
 
