@@ -31,13 +31,6 @@ export async function createProjectIssue(
     labels: ["project"],
   });
 
-  await octokit.rest.projects.addItemForUser({
-    username: "michaelholley",
-    project_number: 6,
-    type: "Issue",
-    id: response.data.id,
-  });
-
   return { url: response.data.html_url, id: response.data.number };
 }
 
@@ -55,13 +48,6 @@ export async function createTechIssue(
     title: `${title}`,
     body: `### Description\n${description ? description : ""}`,
     labels: ["tech"],
-  });
-
-  await octokit.rest.projects.addItemForUser({
-    username: "michaelholley",
-    project_number: 6,
-    type: "Issue",
-    id: response.data.id,
   });
 
   return { url: response.data.html_url, id: response.data.number };
