@@ -1,4 +1,9 @@
-import { ChatInputCommandInteraction, MessageFlags, SlashCommandBuilder } from "discord.js";
+import {
+  ChatInputCommandInteraction,
+  InteractionContextType,
+  MessageFlags,
+  SlashCommandBuilder,
+} from "discord.js";
 import { createProjectIssue } from "../infrastructure/octokit";
 import { getUserId } from "../util/get-user-id";
 
@@ -7,6 +12,7 @@ const WHITELISTED_USER_IDS = getUserId() ? [getUserId()!] : [];
 export const data = new SlashCommandBuilder()
   .setName("new-project")
   .setDescription("Submit a new project idea")
+  .setContexts(InteractionContextType.BotDM)
   .addStringOption((option) =>
     option.setName("title").setDescription("Title of the GitHub issue").setRequired(true),
   )

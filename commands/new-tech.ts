@@ -1,4 +1,9 @@
-import { ChatInputCommandInteraction, MessageFlags, SlashCommandBuilder } from "discord.js";
+import {
+  ChatInputCommandInteraction,
+  InteractionContextType,
+  MessageFlags,
+  SlashCommandBuilder,
+} from "discord.js";
 import { createTechIssue } from "../infrastructure/octokit";
 import { getUserId } from "../util/get-user-id";
 
@@ -7,6 +12,7 @@ const WHITELISTED_USER_IDS = getUserId() ? [getUserId()!] : [];
 export const data = new SlashCommandBuilder()
   .setName("new-tech")
   .setDescription("Submit a new technology for review")
+  .setContexts(InteractionContextType.BotDM)
   .addStringOption((option) =>
     option.setName("title").setDescription("The name/title of the technology").setRequired(true),
   )
